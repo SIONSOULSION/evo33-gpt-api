@@ -2,6 +2,6 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.get("/schema")
+@router.get("/")
 def schema():
     return {"message": "Schema endpoint"}

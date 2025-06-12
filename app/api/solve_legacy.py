@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.get("/solve-legacy")
+@router.get("/")
 def solve_legacy():
     return {"message": "Solve legacy endpoint"}
+    
