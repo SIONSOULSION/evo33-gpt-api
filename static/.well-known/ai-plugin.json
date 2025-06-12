@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Evo33 Logic Engine",
+  "name_for_model": "evo33_logic",
+  "description_for_human": "Evaluate logic, explain paradoxes, and trace symbolic reasoning.",
+  "description_for_model": "Plugin for solving symbolic logic expressions, detecting contradictions, tracing logic evaluations, and translating boolean rules into natural language.",
+  "auth": { "type": "none" },
+  "api": { "type": "openapi", "url": "https://evo33.io/openapi.yaml" },
+  "logo_url": "https://evo33.io/static/logo.png",
+  "contact_email": "founder@aibiosynergy.org",
+  "legal_info_url": "https://evo33.io/legal"
+}
