@@ -2,10 +2,17 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, HTMLResponse
-import markdown
 
-from app.api import solve, explain, trace, debug, translate
-from app.api import solve_legacy, quantum, scroll, schema
+# Explicit router imports
+from app.api.solve import router as solve_router
+from app.api.explain import router as explain_router
+from app.api.trace import router as trace_router
+from app.api.debug import router as debug_router
+from app.api.translate import router as translate_router
+from app.api.solve_legacy import router as solve_legacy_router
+from app.api.quantum import router as quantum_router
+from app.api.scroll import router as scroll_router
+from app.api.schema import router as schema_router
 
 app = FastAPI(
     title="Evo33: Codex Reasoning Engine",
@@ -38,18 +45,17 @@ def get_manifest():
 def get_robots():
     return FileResponse("static/robots.txt", media_type="text/plain")
 
-# Corrected route for serving the HTML landing page
 @app.get("/", response_class=HTMLResponse)
 def serve_index():
     return FileResponse("static/index.html")
 
-# Include API routers
-app.include_router(solve, prefix="/solve", tags=["Logic Solving"])
-app.include_router(explain, prefix="/explain", tags=["Explanation Engine"])
-app.include_router(trace, prefix="/trace", tags=["Proof Tracing"])
-app.include_router(debug, prefix="/debug", tags=["Debugging"])
-app.include_router(translate, prefix="/translate", tags=["Translation Engine"])
-app.include_router(solve_legacy, prefix="/solve-legacy", tags=["Legacy Logic"])
-app.include_router(quantum, prefix="/quantum", tags=["Quantum Mode"])
-app.include_router(scroll, prefix="/scroll", tags=["Codex Reasoning"])
-app.include_router(schema, prefix="/schema", tags=["Schema Explorer"])
+# Include API routers explicitly
+app.include_router(solve_router, prefix="/solve", tags=["Logic Solving"])
+app.include_router(explain_router, prefix="/explain", tags=["Explanation Engine"])
+app.include_router(trace_router, prefix="/trace", tags=["Proof Tracing"])
+app.include_router(debug_router, prefix="/debug", tags=["Debugging"])
+app.include_router(translate_router, prefix="/translate", tags=["Translation Engine"])
+app.include_router(solve_legacy_router, prefix="/solve-legacy", tags=["Legacy Logic"])
+app.include_router(quantum_router, prefix="/quantum", tags=["Quantum Mode"])
+app.include_router(scroll_router, prefix="/scroll", tags=["Codex Reasoning"])
+app.include_router(schema_router, prefix="/schema", tags=["Schema Explorer"])
