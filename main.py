@@ -1,8 +1,11 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, HTMLResponse
-import markdown
+from fastapi.responses import FileResponse
+
+@app.get("/", response_class=HTMLResponse)
+def serve_index():
+    return FileResponse("static/index.html")
 
 from app.api import solve, explain, trace, debug, translate
 from app.api import solve_legacy, quantum, scroll, schema
