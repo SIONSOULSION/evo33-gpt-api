@@ -49,6 +49,19 @@ def get_robots():
 def serve_index():
     return FileResponse("static/index.html")
 
+  # New explicit routes for Privacy, Legal, User Rights
+@app.get("/privacy", response_class=HTMLResponse)
+def privacy():
+    return FileResponse("static/privacy.html")
+
+@app.get("/legal", response_class=HTMLResponse)
+def legal():
+    return FileResponse("static/legal.html")
+
+@app.get("/user-rights", response_class=HTMLResponse)
+def user_rights():
+    return FileResponse("static/user-rights.html")  
+
 # Include API routers explicitly
 app.include_router(solve_router, prefix="/solve", tags=["Logic Solving"])
 app.include_router(explain_router, prefix="/explain", tags=["Explanation Engine"])
