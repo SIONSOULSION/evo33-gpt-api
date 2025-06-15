@@ -51,16 +51,17 @@ def serve_index():
 
   # New explicit routes for Privacy, Legal, User Rights
 @app.get("/privacy", response_class=HTMLResponse)
-def privacy():
+def privacy_policy():
     return FileResponse("static/privacy.html")
 
 @app.get("/legal", response_class=HTMLResponse)
-def legal():
+def legal_notice():
     return FileResponse("static/legal.html")
 
 @app.get("/user-rights", response_class=HTMLResponse)
 def user_rights():
-    return FileResponse("static/user-rights.html")  
+    return FileResponse("static/user-rights.html")
+  
 
 # Include API routers explicitly
 app.include_router(solve_router, prefix="/solve", tags=["Logic Solving"])
