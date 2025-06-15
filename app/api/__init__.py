@@ -2,3 +2,12 @@ from .solve_legacy import router as solve_legacy
 from .quantum import router as quantum
 from .scroll import router as scroll
 from .schema import router as schema
+from .evo33_inference_engine import router as inference
+from .provenance_engine import router as provenance
+from .trust_transfer import router as trust_transfer
+from .evo33_codex_bridge import router as codex_bridge
+from .debug import router as debug
+from .explain import router as explain
+from .trace import router as trace
+from .translate import router as translate
+from .solve import router as solve
