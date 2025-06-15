@@ -1,0 +1,1 @@
+# Base64-encoded payload simulator for trust-based symbolic knowledge handoff

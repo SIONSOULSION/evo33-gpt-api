@@ -13,6 +13,11 @@ from app.api.solve_legacy import router as solve_legacy_router
 from app.api.quantum import router as quantum_router
 from app.api.scroll import router as scroll_router
 from app.api.schema import router as schema_router
+from app.api.evo33_codex_bridge import router as codex_bridge_router
+from app.api.evo33_inference_engine import router as inference_engine_router
+from app.api.provenance_engine import router as provenance_router
+from app.api.trust_transfer import router as trust_router
+
 
 app = FastAPI(
     title="Evo33: Codex Reasoning Engine",
@@ -73,3 +78,8 @@ app.include_router(solve_legacy_router, prefix="/solve-legacy", tags=["Legacy Lo
 app.include_router(quantum_router, prefix="/quantum", tags=["Quantum Mode"])
 app.include_router(scroll_router, prefix="/scroll", tags=["Codex Reasoning"])
 app.include_router(schema_router, prefix="/schema", tags=["Schema Explorer"])
+app.include_router(codex_bridge_router, prefix="/codex-bridge", tags=["Codex Bridge"])
+app.include_router(inference_engine_router, prefix="/inference-engine", tags=["Inference Engine"])
+app.include_router(provenance_router, prefix="/provenance-engine", tags=["Provenance Engine"])
+app.include_router(trust_router, prefix="/trust-transfer", tags=["Trust Transfer"])
+

@@ -77,3 +77,36 @@ paths:
       responses:
         '200':
           description: Translated logic descriptions
+
+  /codex-bridge:
+  get:
+    summary: Codex Bridge functionality
+    operationId: codexBridge
+    responses:
+      '200':
+        description: Codex Bridge Response
+
+  /inference-engine:
+  get:
+    summary: Inference engine operations
+    operationId: inferenceEngine
+    responses:
+      '200':
+        description: Inference Engine Response
+
+  /provenance-engine:
+  get:
+    summary: Provenance engine queries
+    operationId: provenanceEngine
+    responses:
+      '200':
+        description: Provenance Engine Response
+
+  /trust-transfer:
+  get:
+    summary: Trust transfer operations
+    operationId: trustTransfer
+    responses:
+      '200':
+        description: Trust Transfer Response
+        
