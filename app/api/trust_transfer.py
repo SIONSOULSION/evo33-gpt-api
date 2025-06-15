@@ -1,1 +1,7 @@
-# Base64-encoded payload simulator for trust-based symbolic knowledge handoff
+from fastapi import APIRouter
+
+router = APIRouter()
+
+@router.get("/")
+def trust_transfer():
+    return {"message": "Trust transfer engine active."}
