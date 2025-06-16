@@ -94,13 +94,6 @@ paths:
       '200':
         description: Inference Engine Response
 
-  get:
-    summary: Inference engine operations
-    operationId: inferenceEngine
-    responses:
-      '200':
-        description: Inference Engine Response
-
   /provenance-engine:
   get:
     summary: Provenance engine queries
