@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Evo33 Logic Engine
-  description: API for symbolic logic evaluation, contradiction detection, logic tracing, quantum-inspired logic modes, translating Boolean expressions, Codex Bridge functionality, Inference Engine functionality, Provenance engine queries and Trust transfer operations.
+  description: API for symbolic logic evaluation, contradiction detection, logic tracing, quantum-inspired logic modes, and translating Boolean expressions.
   version: "1.0.0"
 servers:
   - url: https://evo33-gpt-api.onrender.com
@@ -77,36 +77,3 @@ paths:
       responses:
         '200':
           description: Translated logic descriptions
-
-  /codex-bridge:
-  get:
-    summary: Codex Bridge functionality
-    operationId: codexBridge
-    responses:
-      '200':
-        description: Codex Bridge Response
-
-  /inference-engine:
-  get:
-    summary: Inference Engine functionality
-    operationId: inferenceEngine
-    responses:
-      '200':
-        description: Inference Engine Response
-
-  /provenance-engine:
-  get:
-    summary: Provenance engine queries
-    operationId: provenanceEngine
-    responses:
-      '200':
-        description: Provenance Engine Response
-
-  /trust-transfer:
-  get:
-    summary: Trust transfer operations
-    operationId: trustTransfer
-    responses:
-      '200':
-        description: Trust Transfer Response
-        
